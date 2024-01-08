@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 import"./Carousel.css"
 import { images } from "../Helpers/CarouselData"
-import  ArrowBackIcon from '@material-ui/icons/ArrowBackIos';
-import  ArrowForwardIcon from '@material-ui/icons/ArrowForwardIos';
+import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+
+
+
+// import  ArrowBackIcon from '@material-ui/icons/ArrowBackIos';
+// import  ArrowForwardIcon from '@material-ui/icons/ArrowForwardIos';
 
 function Carousel () {
   const [currImg, setCurrImg] = useState(0);
@@ -13,7 +18,8 @@ function Carousel () {
         <div className='left' 
         onClick={() =>{ 
           currImg > 0 && setCurrImg(currImg - 1)}}>
-          <ArrowBackIcon style={{fontSize: 30}} />
+         <FaArrowLeft style={{fontSize: 30}}/>
+          {/* <ArrowBackIcon style={{fontSize: 30}} /> */}
         </div>
         <div className='center'>
         <h1>{images[currImg].title}</h1>
@@ -23,7 +29,9 @@ function Carousel () {
         <div className='right'
          onClick={() =>{ 
           currImg < images.length-1 && setCurrImg(currImg + 1)}}>
-        <ArrowForwardIcon style={{fontSize: 30}}/>
+        
+        <FaArrowRight  style={{fontSize: 30}} />
+        {/* <ArrowForwardIcon style={{fontSize: 30}}/> */}
         </div>
 
       </div>
